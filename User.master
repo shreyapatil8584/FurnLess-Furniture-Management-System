@@ -1,0 +1,332 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="User.master.cs" Inherits="User" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Welcome User</title>
+      <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./CSS1/index.css" />
+    <style>
+        /* Modern Footer Styling */
+        .site-footer {
+            background-color: #2d3436;
+            color: #dfe6e9;
+            padding: 70px 0 30px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            text-transform: uppercase;
+        }
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: #14cda8;
+            height: 2px;
+            width: 50px;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        .footer-col ul li a {
+            color: #b2bec3;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .footer-col ul li a:hover {
+            color: #14cda8;
+            padding-left: 8px;
+        }
+        .footer-about p {
+            line-height: 1.8;
+            color: #b2bec3;
+        }
+        .social-links {
+            margin-top: 25px;
+        }
+        .social-links a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255,255,255,0.1);
+            margin: 0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: all 0.5s ease;
+        }
+        .social-links a:hover {
+            color: #2d3436;
+            background-color: #14cda8;
+            transform: translateY(-5px);
+        }
+        .footer-bottom {
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: #636e72;
+        }
+        .badge-cart {
+            background-color: #14cda8 !important;
+        }
+        /* Fix for fixed navbar offset */
+        .main-content {
+            margin-top: 80px;
+            min-height: 600px;
+        }
+    </style>
+    <style>
+    /* 1. Main Navbar Glassmorphism */
+    .navbar-fixed-top {
+        background: rgba(255, 255, 255, 0.08) !important;
+        backdrop-filter: blur(15px) saturate(180%);
+        -webkit-backdrop-filter: blur(15px) saturate(180%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 10px 0;
+        transition: all 0.4s ease;
+    }
+
+    /* 2. Brand & Logo Styling */
+    .navbar-brand {
+        display: flex !important;
+        align-items: center;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #fff !important;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .navbar-brand img {
+        border-radius: 8px;
+        margin-right: 12px;
+        transition: 0.3s;
+    }
+
+    /* 3. Link Styling with Animated Underline */
+    .navbar-nav > li > a {
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-weight: 600;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px; /* Space for icons */
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .navbar-nav > li > a i {
+        color: #14cda8; /* Mint accent for icons */
+        font-size: 16px;
+    }
+
+    /* Hover "Lift" Effect */
+    .navbar-nav > li > a:hover {
+        color: #fff !important;
+        transform: translateY(-2px);
+    }
+
+    .navbar-nav > li > a::after {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: #14cda8;
+        transition: 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .navbar-nav > li > a:hover::after {
+        width: 70%;
+    }
+
+    /* 4. Dropdown Modernization */
+    .dropdown-menu {
+        background: rgba(30, 41, 59, 0.95) !important;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.1) !important;
+        border-radius: 15px !important;
+        padding: 15px !important;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        margin-top: 10px !important;
+    }
+
+    .dropdown-menu > li > a {
+        color: #cbd5e1 !important;
+        padding: 10px 15px !important;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .dropdown-menu > li > a:hover {
+        background: #14cda8 !important;
+        color: #fff !important;
+        padding-left: 20px !important;
+    }
+
+    /* 5. Cart Button Enhancement */
+    #btnCart {
+        background: linear-gradient(135deg, #14cda8, #0ca688) !important;
+        border: none !important;
+        border-radius: 10px !important;
+        font-weight: 700 !important;
+        padding: 8px 20px !important;
+        box-shadow: 0 4px 15px rgba(20, 205, 168, 0.3);
+        transition: 0.3s;
+    }
+    
+    #btnCart:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(20, 205, 168, 0.5);
+    }
+</style>
+    <script>
+        $(document).ready(function myfunction() {
+            $("#btnCart").click(function myfunction() {
+                window.location.href = "Cart.aspx";
+            });
+        });
+    </script>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+     <form id="form1" runat="server">
+    <div>
+        <!-- Navigation Start here--->
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.aspx">
+                <span><img src="./IMAGES/logo.jpg" alt="Furnless" height="40"></span>
+                Furn<span style="color:#14cda8;">Less</span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.aspx"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="About.aspx"><i class="fa fa-info-circle"></i> About</a></li>
+                <li><a href="Contact.aspx"><i class="fa fa-phone"></i> Contact</a></li>
+                <li><a href="Blog.aspx"><i class="fa fa-pencil-square-o"></i> Blog</a></li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-th-large"></i> Product <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Product.aspx"><i class="fa fa-list"></i> All Products</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="Product.aspx"><i class="fa fa-couch"></i> <b>Living Products</b></a></li>
+                        <li><a href="Product.aspx"><i class="fa fa-bed"></i> <b>Bedrooms</b></a></li>
+                        <li><a href="Product.aspx"><i class="fa fa-cutlery"></i> <b>Dining & Kitchen</b></a></li>
+                        <li><a href="Product.aspx"><i class="fa fa-briefcase"></i> <b>Study Furniture</b></a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <div style="padding: 10px 5px;">
+                        <button id="btnCart" class="btn btn-primary navbar-btn" type="button">
+                            <i class="fa fa-shopping-cart"></i> Cart 
+                            <span class="badge" id="pCount" runat="server" style="background:white; color:#14cda8;">0</span>
+                        </button>
+                    </div>
+                </li>
+
+                <li>
+                    <div style="padding: 10px 5px; display: flex; gap: 5px;">
+                        <asp:Button ID="btnLogin" CssClass="btn-signin-modern" runat="server" Text="SignIn" OnClick="btnLogin_Click" 
+                            style="background-color:#14cda8;color:white;padding:8px 18px;border:none;border-radius:10px;font-weight:600;" />
+                        
+                        <asp:Button ID="btnlogout" CssClass="btn-logout-modern" runat="server" Text="Logout" OnClick="btnlogout_Click" 
+                            style="background-color:#ff7675;color:white;padding:8px 18px;border:none;border-radius:10px;font-weight:600;" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+        <!---- Navigation end here ---->
+
+       <div class="main-content">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+       </div>
+    </div>
+    </form>
+    
+    <!-- Professional Footer Section -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-col footer-about">
+                    <h4>About FurnLess</h4>
+                    <p>FurnLess is your premier destination for modern, high-quality furniture that blends style with functionality. We believe in creating beautiful living spaces for everyone.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.aspx">Home</a></li>
+                        <li><a href="Product.aspx">Shop All</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-col">
+                    <h4>Shop Categories</h4>
+                    <ul>
+                        <li><a href="#">Living Room</a></li>
+                        <li><a href="#">Bedroom</a></li>
+                        <li><a href="#">Dining room</a></li>
+                        <li><a href="#">Study Room</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-col">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="Cart.aspx">Shopping Cart</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 footer-bottom">
+                    <p>&copy; 2025 <strong>FurnLess</strong>. Developed with <i class="fa fa-heart" style="color:#ff7675;"></i> by Shreya Patil and Rajnandini Patil |  All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
