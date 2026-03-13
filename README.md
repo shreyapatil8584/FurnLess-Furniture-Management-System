@@ -1,7 +1,7 @@
 # <p align="center">🛋️ Furnless - Modern Furniture Experience</p>
 
 <p align="center">
-  <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Furnless Banner" width="100%">
+  <img src="dash.png" alt="Furnless Banner" width="100%">
 </p>
 
 <p align="center">
@@ -10,8 +10,8 @@
 </p>
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/Live_Website-0ea5e9?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Live Website"></a>
-  <a href="https://github.com/shreya-patil/furnless-copy/archive/refs/heads/main.zip"><img src="https://img.shields.io/badge/Download_Documentation-0284c7?style=for-the-badge&logo=gitbook&logoColor=white" alt="Download Documentation"></a>
+  <a href="https://furnless.vercel.app"><img src="https://img.shields.io/badge/Live_Website-0ea5e9?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Live Website"></a>
+  <a href="https://drive.google.com/file/d/1YYh6GnW4EfedquFAUO6qwQPm4pyiKNIL/view?usp=drive_link"><img src="https://img.shields.io/badge/Download_Documentation-0284c7?style=for-the-badge&logo=gitbook&logoColor=white" alt="Download Documentation"></a>
 </p>
 
 ---
@@ -72,3 +72,4 @@ This project was crafted with ❤️ by:
 <p align="center">
   © 2026 FurnLess Furniture. All rights reserved.
 </p>
+
