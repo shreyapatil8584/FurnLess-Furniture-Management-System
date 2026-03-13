@@ -49,7 +49,7 @@ The system logic is built on a clean data flow architecture. You can view the fu
 
 This project was crafted with ❤️ by:
 
-| [<img src="https://img.icons8.com/clouds/100/000000/user-female.png" width="50"><br><sub><b>Shreya Bhagwan Patil</b></sub>](https://github.com/shreya-patil) | [<img src="https://img.icons8.com/clouds/100/000000/user-female.png" width="50"><br><sub><b>Rajnandini Atul Patil</b></sub>](https://github.com/rajnandini-patil) |
+| [<img src="https://img.icons8.com/clouds/100/000000/user-female.png" width="50"><br><sub><b>Shreya Bhagwan Patil</b></sub>](https://github.com/shreya-patil) | [<img src="https://img.icons8.com/clouds/100/000000/user-female.png" width="50"><br><sub><b>Rajnandini Atul Patil</b></sub>](https://github.com/) |
 | :---: | :---: |
 
 ---
@@ -72,4 +72,5 @@ This project was crafted with ❤️ by:
 <p align="center">
   © 2026 FurnLess Furniture. All rights reserved.
 </p>
+
 
